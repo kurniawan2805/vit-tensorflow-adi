@@ -193,11 +193,11 @@ class Tokenizer(Layer):
             else:
                 channels = in_planes
 
-            conv_layers += [nn.Conv2D(filters=channels, kernel_size=kernel_size, strides=stride, padding='SAME', use_bias=conv_bias)]
+            conv_layers += [nn.Conv2D(filters=channels, kernel_size=kernel_size, strides=stride, padding='same', use_bias=conv_bias)]
             if activation is not None:
                 conv_layers += [activation()]
             if max_pool:
-                conv_layers += [nn.MaxPool2D(pool_size=pooling_kernel_size, strides=pooling_stride, padding='SAME')]
+                conv_layers += [nn.MaxPool2D(pool_size=pooling_kernel_size, strides=pooling_stride, padding='same')]
 
         self.conv_layers = Sequential(conv_layers)
 
